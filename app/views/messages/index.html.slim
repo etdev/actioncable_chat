@@ -29,11 +29,11 @@
             br
             br
           = form_for :message, url: messages_path, remote: true, id: 'messages-form' do |f|
-            = f.label :body, 'Enter a message:'
+            = f.label :body, 'メッセージを入力してください：'
             br
             = f.text_field :body, class: "form-control message-body"
             br
-            = f.submit 'Send message', class: "form-control"
+            = f.submit '送信', class: "form-control"
 
 
 

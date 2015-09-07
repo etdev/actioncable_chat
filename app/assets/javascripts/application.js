@@ -14,27 +14,6 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
+//= require channels
 //= require_tree .
 //= require bootstrap-sprockets
-//= require moment
-//= require bootstrap-datetimepicker
-
-var NAVBAR_HEIGHT_CLOSED = 103;
-var NAVBAR_HEIGHT_OPEN = 252;
-
-$(function(){
-  $("button[data-toggle='collapse']").click(function() {
-    toggleNavPadding();
-    console.log("NAVBAR TOGGLE BUTTON CLICKED");
-  });
-});
-
-// make room for expanded navbar
-var toggleNavPadding = function() {
-  if (parseInt($("body").css("padding-top")) > NAVBAR_HEIGHT_CLOSED) {
-    $("body").animate({ "padding-top": "-=212" }, 200);
-  }
-  else {
-    $("body").animate({ "padding-top": "+=212" }, 200);
-  }
-};
