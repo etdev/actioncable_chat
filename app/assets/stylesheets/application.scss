@@ -1,29 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- */
-
-@import 'custom-mixins';
-/*@import 'colors';*/
-/*@import 'custom';*/
-/*@import 'navbar';*/
-/*@import 'footer';*/
-/*@import 'events';*/
-/*@import 'sessions';*/
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-/*@import 'bootstrap-datetimepicker';*/
-/*@import 'datetimepicker-custom';*/
-/*@import 'text-scale';*/
-/*@import 'utilities';*/
-/*@import 'users';*/
 @import 'simple-sidebar';

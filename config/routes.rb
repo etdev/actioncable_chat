@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   # custom bootstrap styles test page
   get "bs_test" => "tests#show"
   get "about" => "static#about", as: :about
-  root "events#new"
+  root "messages#index"
 end
