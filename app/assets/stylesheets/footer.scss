@@ -1,0 +1,30 @@
+$foot-height: 100px;
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -60px;
+  @include bp(sp) {
+    margin-bottom: 0px;
+  }
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+.site-footer, .page-wrap:after {
+  color: #ddd;
+  height: 60px;
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+  @include bp(sp) {
+    display: none;
+    #calendar-support, #real-time-updates {
+      display: none;
+    }
+  }
+}
+.site-footer {
+  background: rgba(0, 0, 0, 0.3);
+}

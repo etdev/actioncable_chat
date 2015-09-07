@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+development:
+  <<: *default
+  database: zoneconvert_development
+test:
+  <<: *default
+  database: zoneconvert_test
+production:
+  <<: *default
+  database: zoneconvert_production
+  password: <%= ENV['ZONECONVERT_DATABASE_PASSWORD'] %>

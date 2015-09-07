@@ -1,0 +1,10 @@
+language: ruby
+before_script:
+  - psql -c 'CREATE DATABASE zoneconvert_test;' -U postgres
+cache: bundler
+rvm:
+  - 2.2.2
+notifications:
+  email: false
+addons:
+  postgresql: "9.3"

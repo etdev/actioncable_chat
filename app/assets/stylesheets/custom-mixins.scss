@@ -1,0 +1,50 @@
+// responsive
+@mixin bp($point) {
+  @if $point == xl {
+    @media (min-width: 992px) {
+      @content;
+    }
+  } @else if $point == pc {
+    @media (min-width: 768px)  {
+      @content;
+    }
+  } @else if $point == sp {
+    @media (max-width: 768px)  {
+      @content;
+    }
+  }
+}
+
+// padding for top-level containers
+@mixin auto-margin() {
+  @extend .container;
+  margin: 0 auto !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+// navbar
+@mixin centerTextVert($elementHeight) {
+  height: $elementHeight !important;
+  line-height: $elementHeight !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+// fonts
+@mixin setFont($name, $serif-mode) {
+  font-family: $name, $serif-mode !important;
+}
+
+// centering
+@mixin center-vert($height) {
+  height: $height;
+  line-height: $height;
+  margin: 0 auto;
+  padding: 0;
+}
+
+@mixin border-box() {
+  box-sizing: border-box;
+}
+

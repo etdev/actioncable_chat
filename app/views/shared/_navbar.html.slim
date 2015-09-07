@@ -1,0 +1,34 @@
+nav.navbar-default.navbar-static-top
+  .container
+    .navbar-header
+      button.navbar-toggle.collapsed aria-expanded="false" data-target="#navbar-collapse" data-toggle="collapse" type="button"
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand href=root_path
+        .navbar-brand-content
+          span class="glyphicon glyphicon glyphicon-fire navbar-brand-icon" aria-hidden="true"
+          span class="navbar-brand-text"
+            span class="fat-text" Z
+            | one
+            span class="fat-text" C
+            | onvert
+
+    /! Collect the nav links, forms, and other content for toggling
+    #navbar-collapse.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li class=(current_page?(root_path) ? "active" : nil)
+          = link_to "Home", root_path, class: "text-uppercase"
+        li class=(current_page?(about_path) ? "active" : nil)
+          = link_to "About", about_path, class: "text-uppercase"
+        - if current_user
+          li class=(current_page?(user_path(current_user)) ? "active" : nil)
+            = link_to "Account", current_user, class: "text-uppercase"
+          li class=(current_page?(user_path(current_user)) ? "active" : nil)
+            = link_to "Sign Out", session_path(current_user), class: "text-uppercase", method: :delete
+        - else
+          li class=(current_page?(new_session_path) ? "active" : nil)
+            = link_to "Sign in", new_session_path, class: "text-uppercase"
+          li
+            = link_to "Sign up", new_user_path, class: "text-uppercase btn btn-register"

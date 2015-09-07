@@ -1,0 +1,112 @@
+$nav-height: 100px;
+$toggle-btn-height: 34px;
+$toggle-offset: ($nav-height - $toggle-btn-height) / 2;
+$top-offset: 25px;
+$highlight-blue: #10FFF6;
+$dull-text: rgba(255, 255, 255, 0.85);
+
+.navbar-default {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+  clear: both;
+
+  li, a {
+    color: #fff !important;
+  }
+}
+
+.navbar-collapse {
+  border: none !important;
+}
+
+
+.navbar-toggle {
+  margin-top: 15px !important;
+  .icon-bar {
+    background-color: #fff !important;
+  }
+}
+
+.navbar-collapse {
+  border: none !important;
+}
+
+.navbar-collapse.in {
+  border: none !important;
+}
+
+.navbar-nav > li {
+  a:hover {
+    color: $dull-text !important;
+  }
+}
+.navbar-nav > li.active > a {
+  background-color: rgba(0, 0, 0, 0) !important;
+  @include bp(pc) { border-bottom: 3px solid $highlight-blue; }
+}
+
+.navbar-collapse ul li {
+  text-align: right;
+  @include bp(sp) {
+    text-align: center;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+}
+
+.navbar-nav {
+  border: none !important;
+  li {
+    @include bp(pc) {
+      padding-top: 20px !important;
+      padding-bottom: 20px !important;
+    }
+  }
+}
+
+.navbar-brand-content {
+  font-size: 2.6rem;
+  @include bp(pc) {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+  }
+}
+
+.glyphicon-fire {
+  color: $highlight-blue !important;
+}
+
+.navbar-brand-icon {
+  padding-left: 0.4rem;
+  padding-right: 0.8rem;
+}
+
+.navbar-brand-text {
+  &:hover {
+    color: $dull-text !important;
+  }
+}
+
+.fat-text {
+  font-weight: 800 !important;
+}
+
+// actual list of links on right side
+.navbar-nav {
+  font-size: 1.87rem;
+  li a {
+    @include bp(pc) {
+      margin-left: 20px;
+      @include border-box;
+    }
+  }
+}
+
