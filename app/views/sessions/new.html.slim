@@ -3,11 +3,12 @@
     = form_for :session, url: session_path do |form|
       .row
         .col-xs-12.center-text.main-text
-          h2 SIGN IN
+          h2 ログイン
         .col-xs-12.center-text.skinny-text.secondary-text
-          | or
-          = link_to " sign up for a new account", new_user_path
+          | または
+          = link_to "新規アカウントを作成", new_user_path
       .row
+        br
         .center-content.session-form
           .form-group
             = form.label :email

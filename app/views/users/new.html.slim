@@ -3,10 +3,10 @@
     = form_for @user do |form|
       .row
         .col-xs-12.center-text
-          h2 SIGN UP
+          h2 新規登録
         .col-xs-12.center-text.skinny-text.secondary-text
-          | or
-          = link_to " sign in to an existing account", new_session_path
+          | または
+          = link_to "既存のアカウントにログイン", new_session_path
       .row
         - if @user.errors.any?
           .red.flash-warning
@@ -17,6 +17,7 @@
                 - @user.errors.full_messages.each do |error_message|
                   li
                     = error_message
+        br
         .center-content.user-form
           .form-group
             = form.label :email
