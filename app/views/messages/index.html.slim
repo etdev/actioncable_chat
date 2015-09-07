@@ -15,17 +15,28 @@
         a href="#"  Dashboard
       li
         | ...
-  /! /#sidebar-wrapper
   /! Page Content
   #page-content-wrapper
     .container-fluid
       .row
         .col-lg-12
-          /h1 ActionCable Test App
           div.page-header
-            h1 ActionCable Test App
-            p Subtext for header
+            h1 ActionCable 英語チャット
+            p 日本語禁止
           a#menu-toggle.btn.btn-default href="#menu-toggle"  Toggle Sidebar
+
+          #messages
+            br
+            br
+          = form_for :message, url: messages_path, remote: true, id: 'messages-form' do |f|
+            = f.label :body, 'Enter a message:'
+            br
+            = f.text_field :body, class: "form-control message-body"
+            br
+            = f.submit 'Send message', class: "form-control"
+
+
+
 javascript:
   $("#menu-toggle").click(function(e) {
     e.preventDefault();
