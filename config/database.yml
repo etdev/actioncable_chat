@@ -4,11 +4,11 @@ default: &default
   pool: 5
 development:
   <<: *default
-  database: zoneconvert_development
+  database: action_cable_test_development
 test:
   <<: *default
-  database: zoneconvert_test
+  database: action_cable_test_test
 production:
   <<: *default
-  database: zoneconvert_production
-  password: <%= ENV['ZONECONVERT_DATABASE_PASSWORD'] %>
+  database: action_cable_test_production
+  password: <%= ENV['ACTION_CABLE_TEST_DATABASE_PASSWORD'] %>

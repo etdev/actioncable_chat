@@ -5,15 +5,15 @@ html
     = favicon_link_tag "favicon.ico"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Montserrat"
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:400,300"
-    title ZoneConvert
+    title ActionCable Test App
     = stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
     body
-      = render "shared/navbar"
-      .page-wrap
-        = image_tag("mountains-s.jpg", class: "bg")
-        .bg-darken
-        = render "shared/flash"
-        = yield
-        = render "shared/footer"
+      /= render "shared/navbar"
+      /.page-wrap
+        /= image_tag("mountains-s.jpg", class: "bg")
+        /.bg-darken
+        /= render "shared/flash"
+      = yield
+        /= render "shared/footer"

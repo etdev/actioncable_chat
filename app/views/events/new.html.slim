@@ -1,20 +1,59 @@
-.container-fluid
-  .row
-    .col-xs-12.center-text.main-text
-      h2.text-uppercase.fat-text Timezones are confusing.
-      p.text-secondary But with ZoneConvert, you can easily convert between them.
-  .row
-    .col-sm-10.col-md-6.col-sm-offset-1.col-md-offset-3
-      = form_for @event, html: {class: "event-form"} do |form|
-        = form.label :them, "Them"
-        = form.text_field :remote_location, class: "form-control", placeholder: "Location, e.g. Tokyo, Japan"
-        #dt_picker_remote.input-group
-          = form.text_field :remote_time, class: "form-control", id: "#datepicker1", placeholder: "Date/Time"
-          span.input-group-addon
-            span.glyphicon.glyphicon-calendar
-        = form.label :you, "You"
-        = form.text_field :local_location, class: "form-control", placeholder: "Location, e.g. Los Angeles, CA"
-        .row
-          .col-sm-12.col-md-6.col-md-offset-6
-            = form.submit "Calculate", class: "form-control btn btn-primary"
+/.container-fluid
+  /.row
+    /.col-xs-12.center-text.main-text
+      /h2.text-uppercase.fat-text Action Cable Test App
+      /p.text-secondary 
+  /.row
+    /.col-sm-10.col-md-6.col-sm-offset-1.col-md-offset-3
+      /= form_for @event, html: {class: "event-form"} do |form|
+        /= form.label :them, "Them"
+        /= form.text_field :remote_location, class: "form-control", placeholder: "Location, e.g. Tokyo, Japan"
+        /#dt_picker_remote.input-group
+          /= form.text_field :remote_time, class: "form-control", id: "#datepicker1", placeholder: "Date/Time"
+          /span.input-group-addon
+            /span.glyphicon.glyphicon-calendar
+        /= form.label :you, "You"
+        /= form.text_field :local_location, class: "form-control", placeholder: "Location, e.g. Los Angeles, CA"
+        /.row
+          /.col-sm-12.col-md-6.col-md-offset-6
+            /= form.submit "Calculate", class: "form-control btn btn-primary"
+#wrapper
+  /! Sidebar
+  #sidebar-wrapper
+    ul.sidebar-nav
+      li.sidebar-brand
+        a href="#" 
+          | Start Bootstrap
+      li
+        a href="#"  Dashboard
+      li
+        a href="#"  Shortcuts
+      li
+        a href="#"  Overview
+      li
+        a href="#"  Events
+      li
+        a href="#"  About
+      li
+        a href="#"  Services
+      li
+        a href="#"  Contact
+  /! /#sidebar-wrapper
+  /! Page Content
+  #page-content-wrapper
+    .container-fluid
+      .row
+        .col-lg-12
+          h1 Simple Sidebar
+          p This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.
+          p
+            | Make sure to keep all page content within the
+            /= succeed "." do
+              /code #page-content-wrapper
+          a#menu-toggle.btn.btn-default href="#menu-toggle"  Toggle Menu
+  javascript:
+    $("#menu-toggle").click(function(e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
 

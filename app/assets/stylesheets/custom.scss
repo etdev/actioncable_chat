@@ -7,11 +7,11 @@ html, body {
 }
 
 body {
-  @include setFont('Montserrat', 'sans-serif');
-  @include bp(sp) {
-    padding-top: 45px;
-  }
-  padding-top: $navbar-offset-closed;
+  /*@include setFont('Montserrat', 'sans-serif');*/
+  /*@include bp(sp) {*/
+    /*padding-top: 45px;*/
+  /*}*/
+  /*padding-top: $navbar-offset-closed;*/
 }
 
 .secondary-text {
@@ -89,51 +89,51 @@ a {
 
 // buttons
 .btn.btn-default {
-  background: rgba(0, 0, 0, 0);
-  border: solid 2px #fff;
-  color: #fff;
-  &:hover {
-    background: #fff;
-  }
+  /*background: rgba(0, 0, 0, 0);*/
+  /*border: solid 2px #fff;*/
+  /*color: #fff;*/
+  /*&:hover {*/
+    /*background: #fff;*/
+  /*}*/
 }
 .btn.btn-primary {
-  background: $text-muted;
-  border: solid 1px $text-more-muted !important;
-  &:hover {
-    background: $text-more-muted;
-    background: $text-more-muted;
-  }
+  /*background: $text-muted;*/
+  /*border: solid 1px $text-more-muted !important;*/
+  /*&:hover {*/
+    /*background: $text-more-muted;*/
+    /*background: $text-more-muted;*/
+  /*}*/
 }
 
 .btn.btn-register {
-  border: solid 1px $text-muted !important;
-  background: rgba(0, 0, 0, 0) !important;
-  color: $text-accent !important;
-  font-size: 1.67rem !important;
-  &:hover {
-    //color: $text-accent !important;
-    background: $text-muted !important;
-    color: #fff !important;
-  }
+  /*border: solid 1px $text-muted !important;*/
+  /*background: rgba(0, 0, 0, 0) !important;*/
+  /*color: $text-accent !important;*/
+  /*font-size: 1.67rem !important;*/
+  /*&:hover {*/
+    color: $text-accent !important;
+    /*background: $text-muted !important;*/
+    /*color: #fff !important;*/
+  /*}*/
 }
 
 .btn.btn-success {
-  background: $text-success;
-  border: solid 1px $text-success-muted;
-  @include border-box;
-  padding: 10px;
-  &:hover {
-    background: $text-success-muted;
-  }
+  /*background: $text-success;*/
+  /*border: solid 1px $text-success-muted;*/
+  /*@include border-box;*/
+  /*padding: 10px;*/
+  /*&:hover {*/
+    /*background: $text-success-muted;*/
+  /*}*/
 }
 
 .btn.btn-cloudy {
-  background: rgba(255, 255, 255, 0.3);
-  text-shadow: 1px 1px rgba(0,0,0,0.1);
-  &:hover {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
-  }
+  /*background: rgba(255, 255, 255, 0.3);*/
+  /*text-shadow: 1px 1px rgba(0,0,0,0.1);*/
+  /*&:hover {*/
+  /*background: rgba(255, 255, 255, 0.2);*/
+  /*color: #fff;*/
+  /*}*/
 }
 
 input[type=submit] {

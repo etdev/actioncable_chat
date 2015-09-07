@@ -1,0 +1,37 @@
+doctype html
+html lang="en"
+  head
+    meta charset="utf-8" /
+    meta content="IE=edge" http-equiv="X-UA-Compatible" /
+    meta content="width=device-width, initial-scale=1" name="viewport" /
+    title ActionCable Test App
+  body
+    #wrapper
+      #sidebar-wrapper
+        ul.sidebar-nav
+          li.sidebar-brand
+            a href="#" 
+              | Start Bootstrap
+          li
+            a href="#"  Dashboard
+          li
+            | ...
+      /! /#sidebar-wrapper
+      /! Page Content
+      #page-content-wrapper
+        .container-fluid
+          .row
+            .col-lg-12
+              h1 ActionCable Test App
+              p Post a message below
+              p
+                | Make sure to keep all page content within the
+                /= succeed "." do
+                  /code #page-content-wrapper
+              a#menu-toggle.btn.btn-primary href="#menu-toggle"  Toggle Menu
+    javascript:
+      $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+      });
+
