@@ -34,4 +34,6 @@ bower.json
 /api/geocode.yaml
 /api/geocode.yml
 
+/public/assets
+
 .rbenv-vars
