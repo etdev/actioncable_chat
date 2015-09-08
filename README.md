@@ -1,7 +1,7 @@
 # ライブラリー紹介：ActionCable
 
 ## ActionCableとは
-Rails5の新しいWebsockets機能。使うと色々リアルタイムできるようになります。
+Rails5の新しいWebsockets機能。使うと色々リアルタイムできるようになります。このチュートリアルで簡単なチャットアプリを作る手順を紹介します。
 
 ## Gemfile
 ```Ruby
@@ -25,6 +25,9 @@ end
 ```
 
 ## メッセージController
+
+`Messages#create`メソッドがWebsocketにメッセージを送るけど、とりあえず`head :ok`だけ返します（まだActionCableを設定していないので）
+
 ```Ruby
 class MessagesController < ApplicationController
   def create
@@ -35,6 +38,9 @@ end
 
 
 ## メッセージのindexページ
+
+`app/views/messages/index.html.slim`
+
 ```Slim
 h1 ActionCableチャット
 p
@@ -56,6 +62,7 @@ p
 ## ActionCableの設定
 まだAlphaなのでgeneratorがないですが、必要なクラスは以下の２つ：
 `ApplicationCable::Connection`
+
 ```Ruby
 # app/channels/application_cable/connection.rb
 module ApplicationCable
@@ -63,7 +70,9 @@ module ApplicationCable
   end
 end
 ```
+
 `ApplicationCable::Channel`
+
 ```Ruby
 # app/channels/application_cable/channel.rb
 module ApplicationCable
@@ -73,6 +82,7 @@ end
 ```
 
 WebSocketのメッセージがJSONで保存されるのでRedisも必要です：
+
 ```Ruby
 # config/redis/cable.yml
 local: &local
@@ -85,7 +95,8 @@ development: *local
 test: *local
 ```
 
-Railsと別のサーバーで動くのでrackup fileも必要です：
+ActionCableはRailsと別のサーバーで動くのでrackup fileも必要です：
+
 ```Ruby
 # cable/config.ru
 require ::File.expand_path('../../config/environment',  __FILE__)
@@ -97,6 +108,7 @@ run ActionCable.server
 ```
 
 このサーバーはPumaで`bin/cable`で28080ポートで実行します。
+
 ```Ruby
 # /bin/bash
 bundle exec puma -p 28080 cable/config.ru
@@ -114,6 +126,7 @@ end
 あるユーザが`MessagesChannel`にサブスクライブするタイミングで`#subscribed`メソッドが実行されます。
 
 ## メッセージstreamにメッセージを流す
+
 ```Ruby
 class MessagesController < ApplicationController
   def create
@@ -127,7 +140,9 @@ end
 ```
 
 ## Client Sideからメッセージにサブスクライブ
+
 `app/assets/javascripts/channels/index.coffee`:
+
 ```Ruby
 #= require cable
 #= require_self
@@ -137,7 +152,8 @@ end
 App.cable = Cable.createConsumer 'ws://127.0.0.1:28080'
 ```
 
-`app/assets/javascripts/channels/messages.coffee`
+`app/assets/javascripts/channels/messages.coffee`：
+
 ```Coffeescript
 App.messages = App.cable.subscriptions.create 'MessagesChannel',
   received: (data) ->
@@ -156,10 +172,10 @@ clientがwebsocketからデータを受けるときに`App.messages.received`が
 
 ## サーバーを起動
 * `sh bin/cable`
-* `
+* `bundle exec rails server`
 
 ## 参考
+* [テストアプリ](
 * [Getting started with Rails 5's ActionCable and websockets](http://nithinbekal.com/posts/rails-action-cable/)
 * [github.com/rails/actioncable](https://github.com/rails/actioncable)
 * [GoRails: ActionCable and Websockets Introduction](https://gorails.com/episodes/rails-5-actioncable-websockets)
-* 
