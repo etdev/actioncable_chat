@@ -26,8 +26,8 @@
             a#menu-toggle.btn.btn-default href="#menu-toggle"  Toggle Sidebar
 
           #messages
-            br
-            br
+          br
+          br
           = form_for :message, url: messages_path, remote: true, id: 'messages-form' do |f|
             = f.label :body, 'メッセージを入力してください：'
             br
