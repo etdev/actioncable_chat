@@ -1,4 +1,5 @@
 class MessagesController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   def create
    ActionCable.server.broadcast 'messages',
       message: params[:message][:body],
